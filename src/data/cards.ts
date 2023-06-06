@@ -1,18 +1,22 @@
 export const cardsDisney = [
 	{
 		id: '1',
-		back: '😈',
+		back: 'IMAGE',
+		backDescription: 'DESCRIÇÃO',
 	},
 	{
 		id: '2',
-		back: '🤡',
+		back: 'IMAGE',
+		backDescription: 'DESCRIÇÃO',
 	},
 	{
 		id: '3',
-		back: '👽',
+		back: 'IMAGE',
+		backDescription: 'DESCRIÇÃO',
 	},
 	{
 		id: '4',
-		back: '👻',
+		back: 'IMAGE',
+		backDescription: 'DESCRIÇÃO',
 	},
 ];

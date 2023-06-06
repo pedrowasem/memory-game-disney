@@ -4,12 +4,14 @@ export interface CardDisneyProps {
 	id: string;
 	flipped?: boolean;
 	back: string;
+	backDescription: string;
 	handleClick?: (id: string) => void;
 }
 
 export function CardDisney({
 	flipped = false,
 	back,
+	backDescription,
 	handleClick,
 	id,
 }: CardDisneyProps) {
@@ -25,7 +27,10 @@ export function CardDisney({
 		<div className="card" onClick={() => handleClickFn(id)}>
 			<div className={cardContentClassNames.join(' ')}>
 				<div className="cardFace cardFaceFront">?</div>
-				<div className="cardFace cardFaceBack">{back}</div>
+				<div className="cardFace cardFaceBack">
+					<div className="cardContainer">{back}</div>
+					<div className=" cardContainer">{backDescription}</div>
+				</div>
 			</div>
 		</div>
 	);
