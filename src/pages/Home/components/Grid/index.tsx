@@ -1,5 +1,6 @@
 import { Button } from '@mui/material';
-import { useRef, useState } from 'react';
+import axios from 'axios';
+import { useEffect, useRef, useState } from 'react';
 
 import { duplicateRegenerateSortArray } from '../../../../utils/cardsUtils';
 import { CardDisney, CardDisneyProps } from '../Card';
@@ -14,6 +15,14 @@ export function Grid({ cards }: GridProps) {
 	const [stateCards, setStateCards] = useState(() => {
 		return duplicateRegenerateSortArray(cards);
 	});
+
+	useEffect(() => {
+		axios.get('https://api.disneyapi.dev/character').then((response) => {
+			const data = response.data;
+
+			setStateCards(data.data);
+		});
+	}, []);
 
 	const first = useRef<CardDisneyProps | null>(null);
 	const second = useRef<CardDisneyProps | null>(null);
